@@ -1,0 +1,139 @@
+/* normaliser un un document css:ne retient que ce qui est nécessaire pour notre site */
+
+*{
+    margin: 0;
+    padding: 0;
+    /*  */
+    box-sizing: border-box;
+}
+body {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        background-color: #f3f3f3;
+        color:#2c2c2c;
+}
+/* ====================================================================================================================================   MENU
+ */
+
+ /* Pas besoin d'utiliser nav */
+ ul{
+     background-color: #ffffff;
+     text-align: center;
+     /* enléve la puce */
+     list-style-type: none;
+ }
+ li{
+     /* permet l'alignement de bloc*/
+     display: inline-block;
+ }
+ a {
+    text-decoration: none;
+    color: #232323;
+    text-transform: uppercase;
+    /* rem:ref à la taille de texte.multiplicateur de text */
+    font-size: 1.5rem;
+    /*  display: inline-block; permet d'appliquer des marges*/
+    display: inline-block;
+    padding: 15px 25px;
+ }
+
+ /* ====================================================================================================================================   SECTION (Positionnement flex:Boites flexible,permet de réaranger les blocs.Mise en page unilineaire)
+ */
+
+ section{
+     display: flex;
+     /* permet à l'element de revenir à la ligne */
+     flex-wrap: wrap;
+     justify-content: space-between;
+     /*  1100px de largeur et ne doit pas depasser 90% de la taille de l'écran*/
+     width: 1100px;
+     max-width: 90%;
+     /* centrage repartit l'espace blac restant*/
+     margin: 30px auto;
+     /* margin:4cotés */
+     /* margin:haut/bas gauche /droite */
+     /* margin:haut gauche/droite bas */
+      /* margin:haut/bas gauche /droite */
+ }
+ section article{
+    /* flex: 5; */
+    width: 50%;
+ }
+
+ section img{
+/* flex: 2; */
+width: 30%;
+}
+
+section aside{
+width: 100%;
+display: flex;
+justify-content:space-between;
+}
+    section aside iframe{
+        width: 40%;
+    }
+    section aside table{
+        width: 50%;
+        border-collapse: collapse;
+        margin-top: 50px;
+    }
+        /*  nth-child(odd):numero de l'enfant impair mettre even pour pair*/
+         /*  nth-of-type:numero de l'enfant*/
+        table tr:nth-child(odd){
+            background-color: #d3d3d3;
+
+        }
+        /* premiere colonne de la premère ligne:on met la séparation en gris. */
+        /* table tr:nth-child(odd) td:first-child{
+           border-right: #adadad solid 2px;
+        } */
+        table tr:nth-child(even) td:first-child{
+            border-right: #adadad solid 2px;
+         }
+        table td{
+            padding: 10px;
+            font-size: 1.2rem;
+        }
+    section article p{
+       font-size: 1.2rem;
+       /*interligne :on prends une fois et demi la taille des caratères   */
+       line-height: 1.5em; 
+    }
+h2{
+    font-size: 2.3rem;
+    /* marge de h2 vers le bas */
+    margin-bottom: 10px;
+}
+
+
+/* ====================================================================================================================================   HEADER
+ */
+header{
+    background-image: url(../img/usual-suspects-critique-film.jpg);
+    /* cover:prendre toute la largeur */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    /* image fixe par rapport au navigateur */
+    background-attachment: fixed;
+    padding-top: 180px;
+
+}
+h1{
+    width: 900px;
+    max-width: 90%;
+    margin: auto;
+    padding: 20px 20px 20px;
+    background-color: #f3f3f3;
+    text-align: center;
+    font-size: 2.5rem;
+}
+header button{
+    /*  */
+    position: absolute;
+    left: 50px;
+    top: 70px;
+    padding: 15px;
+    background-color: #f3f3f3;
+    border-radius: 15px;
+}
